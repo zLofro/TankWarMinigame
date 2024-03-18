@@ -1,6 +1,6 @@
 package me.lofro.utils.data;
 
-import me.lofro.Main;
+import me.lofro.TankWarMinigame;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Entity;
 import org.bukkit.persistence.PersistentDataAdapterContext;
@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 public class DataContainer {
 
     public static NamespacedKey key(String value) {
-        return new NamespacedKey(Main.getInstance(), value);
+        return new NamespacedKey(TankWarMinigame.getInstance(), value);
     }
 
     public static void setEntityID(net.minecraft.world.entity.Entity entity, String ID) {
@@ -60,5 +60,9 @@ public class DataContainer {
 
     public static PersistentDataContainer create(PersistentDataHolder holder) {
         return holder.getPersistentDataContainer().getAdapterContext().newPersistentDataContainer();
+    }
+
+    public static void remove(PersistentDataHolder holder, String key) {
+        holder.getPersistentDataContainer().remove(DataContainer.key(key));
     }
 }

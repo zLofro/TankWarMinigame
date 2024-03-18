@@ -65,6 +65,8 @@ public class Locations {
      *
      */
     public static List<Location> getBlocksInsideCube(Location loc1, Location loc2) {
+        if (loc1 == null || loc2 == null) return new ArrayList<>();
+
         List<Location> locations = new ArrayList<>();
 
         var xa = (int) (Math.max(loc1.getX(), loc2.getX()));

@@ -8,7 +8,7 @@ plugins {
 
 group = "me.lofro"
 version = "1.0.0-SNAPSHOT"
-description = "Template for Paper Minecraft Plugin development."
+description = "Tank War mini-game for Minecraft 1.20.4 developed for Dedsafio Games."
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
@@ -66,7 +66,7 @@ tasks {
 }
 
 bukkit {
-    main = "me.lofro.Main"
+    main = "me.lofro.TankWarMinigame"
     version = "1.0"
     apiVersion = "1.20"
     author = "Lofro"

@@ -1,6 +1,6 @@
 package me.lofro.utils.configuration;
 
-import me.lofro.Main;
+import me.lofro.TankWarMinigame;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -101,7 +101,7 @@ public class YMLConfig {
 
         public boolean save() {
             try {
-                File file = new File(Main.getInstance().getDataFolder(), this.fileName);
+                File file = new File(TankWarMinigame.getInstance().getDataFolder(), this.fileName);
                 if (!file.exists() && !this.load()) {
                     return false;
                 } else {
@@ -115,13 +115,13 @@ public class YMLConfig {
         }
 
         public boolean load() {
-            File ymlFile = new File(Main.getInstance().getDataFolder(), this.fileName);
+            File ymlFile = new File(TankWarMinigame.getInstance().getDataFolder(), this.fileName);
             if (!ymlFile.exists()) {
                 try {
                     if (!ymlFile.getParentFile().exists() && !ymlFile.getParentFile().mkdirs()) {
                         throw new IOException("Hubo un error al crear la carpeta para el archivo " + this.fileName);
                     }
-                    Main.getInstance().saveDefaultConfig();
+                    TankWarMinigame.getInstance().saveDefaultConfig();
                 } catch (IOException var4) {
                     Bukkit.getLogger().severe(var4.getMessage());
                     var4.printStackTrace();
@@ -129,7 +129,7 @@ public class YMLConfig {
                 }
             }
 
-            this.customConfig = Main.getInstance().getConfig();
+            this.customConfig = TankWarMinigame.getInstance().getConfig();
             return true;
         }
 

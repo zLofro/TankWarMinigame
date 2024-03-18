@@ -1,6 +1,6 @@
 package me.lofro.utils;
 
-import me.lofro.Main;
+import me.lofro.TankWarMinigame;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -8,7 +8,7 @@ import org.bukkit.plugin.Plugin;
 
 public class ListenerUtils {
 
-    private static final Plugin plugin = Main.getInstance();
+    private static final Plugin plugin = TankWarMinigame.getInstance();
 
     public static void registerListener(Listener listener) {
         Bukkit.getPluginManager().registerEvents(listener, plugin);
